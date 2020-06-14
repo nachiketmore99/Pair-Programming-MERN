@@ -1,0 +1,21 @@
+{
+  "name": "collab-text-editor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "python-shell": "^1.0.8",
+    "request": "^2.88.2",
+    "express": "^4.15.3",
+    "body-parser": "^1.17.2",
+    "pusher":"^3.0.1"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

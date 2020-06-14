@@ -1,0 +1,12 @@
+
+.navbar-nav{
+  float: right;
+}
+nav ul li {
+  margin: 10px;
+}
+
+navbar-nav{
+  float: right;
+  background-color: white;
+}

@@ -1,0 +1,250 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link href="css/app1.css" rel="stylesheet"></link>
+
+        <style>
+            iframe{
+                text-align: center;
+                width: 100%;
+                border: 1px solid transparent;
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <iframe src="https://code-execute.herokuapp.com" id="the_iframe" style="display: none;"></iframe>
+
+        <div class="row">
+            <div class="col-sm-12 header">
+                <h3 class="header_h3">&#8826;&#8725;&#8827;&nbsp; Pair Programming</h3>
+                <a id="github" href="https://github.com/nachiketmore99" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Github"></a>
+            </div>
+            <div class="col-sm-12 content">
+                <div class="col-sm-2 admin-pannel">
+                    <div class="col-sm-1 code-editor-side-panel">
+                        <div class="col-sm-12 code-editor-side-panel-lang" onclick="python()" data-toggle="tooltip" data-placement="right" title="Python3">
+                            <h5 id="python">Python</h5>
+                        </div>
+                        <button id="run" type="button" class="btn"  data-toggle="tooltip" data-placement="right" title="Run Script" data-container="body">Run</button>
+                        <!-- <button id="download" type="button" class="btn">Down</button> -->
+                        <!-- <div class="col-sm-12 code-editor-side-panel-lang" onclick="css()"><h5 id="css">CSS</h5></div>
+                        <div class="col-sm-12 code-editor-side-panel-lang" onclick="js()"><h5 id="js">JavaScript</h5></div> -->
+                    </div>
+                </div>
+                <div class="col-sm-6 code-editor">
+                    <div class="code-editor-container">
+
+                        <div class="col-sm-11 code-editor-text">
+                            <div class="editor" id="editor_python"></div>
+                            <!-- <div class="editor" id="editor_css">css code</div>
+                            <div class="editor" id="editor_js">js code</div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 output">
+                    <div class="output-container">
+                        <div class="col-sm-12">
+                            <div class="col-sm-12" id="title-output"><span>Output</span></div>
+                            <div class="col-sm-12" id="output">
+                                <div id="output-box">{{output}}</div>
+                            </div>
+                            
+                            <div class="col-sm-12" id="title-terminal"><span>Terminal</span></div>
+                            <div class="col-sm-12" id="terminal">
+                                <div id="terminal_lines">
+                                    <div id="line1" style="height: auto; top: 15;"><span style="color: black;">l1</span>>>>&nbsp;</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 footer"><span>Designed & Developed By Nachiket More. &#128521;</span></div>
+        </div>
+
+        <script src="js/ace.js" type="text/javascript" charset="utf-8"></script>
+
+        <script>
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+
+            var editor_python = ace.edit("editor_python");
+            // var editor_css = ace.edit("editor_css");
+            // var editor_js = ace.edit("editor_js");
+
+            editor_python.setTheme("ace/theme/tomorrow_night");
+            editor_python.getSession().setMode("ace/mode/python");
+            editor_python.setOptions({
+                fontFamily: "Dank Mono"
+            });
+
+            // editor_css.setTheme("ace/theme/tomorrow_night");
+            // editor_css.getSession().setMode("ace/mode/html");
+            // editor_css.setOptions({
+            //     fontFamily: "Dank Mono"
+            // });
+
+            // editor_js.setTheme("ace/theme/tomorrow_night");
+            // editor_js.getSession().setMode("ace/mode/html");
+            // editor_js.setOptions({
+            //     fontFamily: "Dank Mono"
+            // });
+
+        </script>
+        
+        <script src="js/app.js"></script>
+        <script src="python.js"></script>
+
+        <script>
+            
+            document.getElementById('editor_python').style.display = "block";
+            // document.getElementById('editor_css').style.display = "none";
+            // document.getElementById('editor_js').style.display = "none";
+
+            function python(){
+            //     document.getElementById('html').classList.add("active");
+            //     document.getElementById('css').classList.remove("active");
+            //     document.getElementById('js').classList.remove("active");
+
+            //     document.getElementById('editor_html').style.display = "block";
+            //     document.getElementById('editor_css').style.display = "none";
+            //     document.getElementById('editor_js').style.display = "none";
+            }
+
+            // function css(){
+            //     document.getElementById('html').classList.remove("active");
+            //     document.getElementById('css').classList.add("active");
+            //     document.getElementById('js').classList.remove("active");
+
+            //     document.getElementById('css').classList.add("active");
+            //     document.getElementById('editor_html').style.display = "none";
+            //     document.getElementById('editor_css').style.display = "block";
+            //     document.getElementById('editor_js').style.display = "none";
+            // }
+
+            // function js(){
+            //     document.getElementById('html').classList.remove("active");
+            //     document.getElementById('css').classList.remove("active");
+            //     document.getElementById('js').classList.add("active");
+
+            //     document.getElementById('js').classList.add("active");
+            //     document.getElementById('editor_html').style.display = "none";
+            //     document.getElementById('editor_css').style.display = "none";
+            //     document.getElementById('editor_js').style.display = "block";
+            // }
+
+        </script>
+
+        <script>
+            var iframeEl = document.getElementById('the_iframe');
+
+            iframeEl.onload = function () {
+
+                // addEventListener support for IE8
+                function bindEvent(element, eventName, eventHandler) {
+                    if (element.addEventListener){
+                        element.addEventListener(eventName, eventHandler, false);
+                    } else if (element.attachEvent) {
+                        element.attachEvent('on' + eventName, eventHandler);
+                    }
+                }
+
+                // Send a message to the child iframe
+                var sendMessage = function(msg) {
+                    // Make sure you are sending a string, and to stringify JSON
+                    iframeEl.contentWindow.postMessage(msg, "https://code-execute.herokuapp.com");
+                    console.log('Sent Msg-',msg)
+                };
+
+                // Send random messge data on every button click
+                document.getElementById('run').addEventListener('click', function(){
+                    console.log(editor_python.getValue())
+                    if ( editor_python.getValue() == "" ){
+                        alert('Empty code');
+                    }
+                    else{
+                        sendMessage('' + editor_python.getValue());
+                    }
+                });
+                
+
+                // Listen to message from child window
+                bindEvent(window, 'message', function (e) {
+                    // console.log(e.data);
+                    var res = e.data.split(",");
+                    document.getElementById('output-box').innerHTML = res[0];
+                    // if (Number(res[3]) == 1){
+                    //     var terminal = document.getElementById('terminal_lines');
+                    //     // terminal.contentEditable = true;
+
+                    //     try {
+                    //         var str = terminal.lastChild.previousSibling.innerHTML;
+                    //         console.log('last child : ', str);
+                    //         var curr_line = str.substring(28, 30);
+                    //         console.log('previous line : ', curr_line);
+                    //         var curr_line = curr_line.substring(1, curr_line.lenght);
+                    //         console.log('line no: ', curr_line);
+                    //         var new_line = Number(curr_line)+1;
+                    //     } catch (error) {
+                    //         var str = terminal.lastChild.innerHTML;
+                    //         console.log('last child : ', str);
+                    //         var curr_line = str.substring(28, 30);
+                    //         console.log('previous line : ', curr_line);
+                    //         var curr_line = curr_line.substring(1, curr_line.lenght);
+                    //         console.log('line no: ', curr_line);
+                    //         var new_line = Number(curr_line)+1;
+                    //     }
+                        
+                    //     div = document.createElement('div'); div.style.height = 'auto'; div.style.top = '15'; 
+                    //     div.innerHTML = '<span style="color: black;">l'+new_line+'</span>'+">>>&nbsp;"+ res[0]; 
+                    //     div.id = 'line'+(new_line);
+
+                    //     terminal.appendChild(div);
+
+                    //     document.getElementById('output-box').innerHTML = 'error occured';
+                    // }
+                    // else{
+                    //     var terminal = document.getElementById('terminal_lines');
+                    //     // terminal.contentEditable = true;
+
+                    //     try {
+                    //         var str = terminal.lastChild.previousSibling.innerHTML;
+                    //         console.log('last child : ', str);
+                    //         var curr_line = str.substring(28, 30);
+                    //         console.log('previous line : ', curr_line);
+                    //         var curr_line = curr_line.substring(1, curr_line.lenght);
+                    //         console.log('line no: ', curr_line);
+                    //         var new_line = Number(curr_line)+1;
+                    //     } catch (error) {
+                    //         var str = terminal.lastChild.innerHTML;
+                    //         console.log('last child : ', str);
+                    //         var curr_line = str.substring(28, 30);
+                    //         console.log('previous line : ', curr_line);
+                    //         var curr_line = curr_line.substring(1, curr_line.lenght);
+                    //         console.log('line no: ', curr_line);
+                    //         var new_line = Number(curr_line)+1;
+                    //     }
+
+                    //     div = document.createElement('div'); div.style.height = 'auto'; div.style.top = '15'; 
+                    //     div.innerHTML = '<span style="color: black;">l'+new_line+'</span>'+">>>&nbsp;"+ res[0]; 
+                    //     div.id = 'line'+(Number(curr_line)+1);
+
+                    //     terminal.appendChild(div);
+
+                    //     document.getElementById('output-box').innerHTML = res[0];
+                    // }
+                });
+            }
+
+        </script>
+    </body>
+</html>

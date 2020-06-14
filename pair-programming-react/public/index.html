@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="src\index.css">
+    
+    <title>React App</title>
+  </head>
+  <body id="body">
+    
+
+    <div class="col-sm-12 header">
+      <nav class="navbar navbar-expand-sm navbar-dark">
+        <a class="navbar-brand"><span class="header_h3">≺∕≻&nbsp; Pair Programming</span></a>
+        
+        <!-- Links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <div id="user">
+              <span id="user_name"></span>
+            </div>
+          </li>
+          <li class="nav-item">
+            <form id="logout" action="http://localhost:4200/user/login/">
+              <button onclick="logout()" class="nav-link">Log Out</button>
+            </form>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="col-sm-12" id="root" onload="loaded()"></div>
+
+    <div class="col-sm-12 footer">
+      <span id='dev'>Designed &amp; Developed By Nachiket More. 😉</span>
+    </div>
+
+
+
+
+
+    <script>
+
+        var getCookies = function(){
+          var pairs = document.cookie.split(";");
+          var cookies = {};
+          for (var i=0; i<pairs.length; i++){
+            var pair = pairs[i].split("=");
+            cookies[(pair[0]+'').trim()] = unescape(pair.slice(1).join('='));
+          }
+          return cookies;
+          }
+
+        function loaded(){
+          console.log('loaded')  
+          // document.getElementById('code-editor').src = 'http://localhost:5000/?id=private-test123'
+          var cookies = getCookies()
+        }    
+        
+        window.onload = loaded;
+
+        function submit(){
+          var cookie = getCookies()
+          document.getElementById("username").value = cookie.username
+          document.getElementById("email").value = cookie.email
+          console.log(document.getElementById("project-name").value, document.getElementById("username").value, document.getElementById("email").value)
+        }
+
+        function logout(){
+          document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+          document.getElementById('logout').submit();
+        }
+    </script>
+    
+  </body>
+</html>

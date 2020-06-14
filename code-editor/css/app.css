@@ -1,0 +1,50 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+  }
+  
+  .header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background-color: teal;
+  }
+  
+  .header__h1 {
+    margin: 20px;
+    padding: 10px;
+    color: #fff;
+  }
+  
+  .doc .doc__background-ribbon {
+    height: 200px;
+    background: #3F51B5;
+  }
+  
+  .doc__text-box {
+    height: 70%;
+    width: 98%;
+    padding: 1% 1%;
+    min-height: 300px;
+    margin: 0 auto;
+    background-color: transparent;
+    overflow: auto;
+    position: relative;
+  }
+
+  .doc .doc__text-editor {
+    width: 32%;
+    height: 100%;
+    font-size: 16px;
+    margin: 5px 5px;
+  }
+
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}

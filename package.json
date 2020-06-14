@@ -1,0 +1,18 @@
+{
+  "name": "pair-programming-mern",
+  "version": "1.0.0",
+  "description": "Collaborative MERN Stack application for real time code editing and compiling",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently --kill-others \"npm run login-api\" \"npm run login-react\" \"npm run code-editor\" \"npm run pair-programming-react\"",
+    "login-api": "(cd login-api && npm run start)",
+    "login-react": "(cd login-react && npm run start)",
+    "code-editor": "(cd code-editor && npm run start)",
+    "pair-programming-react": "(cd pair-programming-react && npm run start)"
+},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.2.0"
+  }
+}

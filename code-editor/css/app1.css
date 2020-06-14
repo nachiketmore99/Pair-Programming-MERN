@@ -1,0 +1,201 @@
+
+@font-face {
+    font-family: dankmono_italic;
+    src: url('fonts/Dank-Mono-Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: dankmono_regular;
+    src: url('fonts/Dank-Mono-Regular.otf') format('opentype');
+}
+body:read-only{
+    color: white;
+    letter-spacing: 1px;
+    width: 99%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    padding: 0; margin: 0;
+    height: 95%;
+    width: 95%;
+    position: absolute;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background-color: #393e46;
+}
+/* .row{
+    position: absolute;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    height: 95%;
+    width: 95%;
+    padding: 0;
+} */
+.header{
+    background-color: #000;
+    height: 7%;
+    display: flex;
+    align-items: center;
+}
+.header_h3{
+    margin: 20px;
+    padding: 10px;
+    color: #ededed;
+}
+#github{
+    position: absolute;
+    background-color: transparent;
+    height: 30px;
+    width: 30px;
+    top: 50%; right: 0%; transform: translate(-50%, -50%);
+    margin-right: 40px;
+    background-image: url('img/git.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.content{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #393e46;
+    padding: 0;
+}
+.footer{
+    height: 5%;
+    align-items: center;
+    background-color: #000;
+}
+.footer span{
+    position: absolute;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-size: 13px;
+    font-family: dankmono_italic;
+}
+.code-editor, .output{
+    height: 100%;
+    padding: 10px;    
+}
+.admin-pannel{
+    width: 4%;
+    padding: 0;
+} 
+.code-editor{
+    width: 52%;
+    padding: 0;
+} 
+.output{
+    width: 47%;
+    padding: 0;
+}
+.admin-pannel-container{
+    height: 100%;
+    background-color: black;
+}
+
+.code-editor-container, .output-container{
+    display: inline-block;
+    height: 100%; width: 100%;
+}
+.code-editor-side-panel{
+    background-color: #393e46;
+    color: #5e5f62;
+    height: 100%;
+    padding: 0;
+}
+.code-editor-text{
+    background-color: transparent;
+    height: 100%; width: 100%;
+}
+.code-editor-side-panel-lang{
+    height: 40px; 
+    margin: 20px 0 20px 0;
+    align-items: center;
+}
+#run{
+    background-color: teal;
+    align-items: center;
+    position: relative;
+    margin: 20px 0 20px 0;
+    height: 40px; width: 40px;
+    border: 1px solid teal;
+    border-radius: 50%;
+    top: 1%; left: 50%; transform: translate(-50%, -50%);
+    color: white;
+    outline: none;
+}
+#run span{
+    position: absolute;
+    top: 50%; left: 55%; transform: translate(-50%, -50%);
+}
+#download{
+    background-color: teal;
+    align-items: center;
+    position: relative;
+    margin: 20px 0 20px 0;
+    padding: 10px 0 10px 0;
+    border: 1px solid teal;
+    border-radius: 5px;
+    top: 0%; left: 50%; transform: translate(-50%, -50%);
+    color: white;
+    outline: none;
+}
+.code-editor-side-panel-lang h5{
+    margin: 0;
+    position: absolute;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    display: inline-block;
+    background-color: transparent;
+}
+
+.editor{
+    height: 100%;
+    padding: 0;
+    font-size: 15px;
+    border: 2px solid #25282c;
+    border-radius: 5px;
+}
+
+.output-container{
+    background-color: transparent; 
+}
+.output-container div{
+    background-color: transparent;
+    position: relative;
+    height: 100%; width: 100%;
+    padding: 0;
+}
+#output{
+    background-color: #292a2e;
+    border:1px solid #292a2e;
+    border-radius: 5px;
+    height: 95%;
+}
+#output-box{
+    height: 97%; width: 95%;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    padding: 0;
+    word-wrap: break-word;
+}
+#terminal{
+    background-color: #292a2e;
+    height: 45%; width: 100%;
+    top: 27%; left: 50%; transform: translate(-50%, -50%);
+    border:1px solid #292a2e;
+    border-radius: 5px;
+}
+#terminal div{
+    background-color: black;
+    position: relative;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    height: 98%; width: 99.5%;
+}
+#terminal div div{
+    background-color: black;
+    position: relative;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    height: 93%; width: 97%;
+    border: 1px solid black;
+}
+#title-output{
+    height: 5%;
+    top: 10px;
+    letter-spacing: 1px;
+}
